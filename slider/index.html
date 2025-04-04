@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+</head>
+<body>
+    <h1>Slider</h1>
+    <img src="" alt="" id="slider-image" style="width: 600px; height: 400px;">
+    <script>
+        let imgarr =  [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsqDz-wYDqDiiCGWLGcgYpV1K7gYVA4qt1Mw&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIxZwccSc-atxZYxcqoSUhVc62r0C26rwOdw&s",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu05cQIbg8cyyigxu9t3aUdYbnrtcWWyAu8Q&s"
+        ]
+        let image = document.querySelector("#slider-image");
+      let count = 0;
+
+  let key =    setInterval(() => {
+    image.src = imgarr[count];
+        if(count == imgarr.length-1){
+          // count = 0;
+          clearInterval(key);
+        }
+        else{
+          count++;
+        }
+    }, 2000);
+
+        // let key = setTimeout(() => {
+        //     image.src = imgarr[count];
+        //     if(count == imgarr.length){
+        //         count = 0;
+        //         count++;
+        //     }
+        // }, 2000);
+    </script>
+</body>
+</html>
