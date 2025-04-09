@@ -1,0 +1,24 @@
+<!-- There are multiple <p> elements inside a <div> with the class content. Using querySelectorAll, change the text of all paragraphs to "Updated Content". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p2</title>
+</head>
+<body>
+    <div>
+        <p>hi</p>
+        <p>hi</p>
+        <p>hi</p>
+    </div>
+    <script>
+        let p = document.querySelectorAll("p");
+        p.forEach(function(element) {
+            element.innerText = "Updated Content";
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!-- There is an unordered list (<ul>) with the ID item-list. Using querySelector, add a new list item <li>Item 4</li> to the list using innerHTML. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p4</title>
+</head>
+<body>
+    <ul>
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+    <li class="list"></li>
+    </ul>
+    <script>
+        let list = document.querySelectorAll(".list");
+        console.log(list);
+        for(let i=0;i<4;i++){
+            list[i].innerText = "Item "+(i+1);
+        }
+
+    </script>
+</body>
+</html>

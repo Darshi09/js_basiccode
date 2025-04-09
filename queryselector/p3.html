@@ -1,0 +1,21 @@
+<!-- Select the button with the class submit-btn using querySelector and change its text to "Submit Form". -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p3</title>
+</head>
+<body>
+    <p id="show"></p>
+    <button id="submit">Submit</button>
+</body>
+<script>
+    let show = document.querySelector("#show");
+    let submit = document.querySelector("#submit");
+    submit.addEventListener("click",()=>{
+        show.innerText = "Submit Form";
+    })
+</script>
+</html>
