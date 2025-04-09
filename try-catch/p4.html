@@ -1,0 +1,39 @@
+<!-- You are creating a login feature for a website. The user must input both their username and password. A user attempts to log in but forgets to enter their password, causing an error. Write a JavaScript solution to display "Please fill in all the fields" if any field is left empty.
+
+Hint:
+Use try...catch to check if any field is empty, and throw an error if either the username or password is missing. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>login Form</h1>
+    <form action="">
+        <div>Username: <input type="text" id="uname"></div>
+        <div>Password: <input type="password" id="pass"></div>
+        <button id="btn">Submit</button>
+    </form>
+    <script>
+        let name= document.querySelector("#uname")
+        let pass= document.querySelector("#pass")
+        let btn= document.querySelector("#btn")
+        btn.addEventListener("click",()=>{
+            try{
+                if(name.value=="" || pass.value==""){
+                    throw new Error("please fill all details")
+                }
+            }
+            catch(err){
+                alert(err.message)
+            }
+            finally{
+                console.log("finally block")    
+            }
+        })
+    </script>
+</body>
+</html>

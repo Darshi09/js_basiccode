@@ -1,0 +1,36 @@
+<!-- You are building a website for an online store. While calculating the total price, a user adds 3 items to the cart but accidentally leaves the quantity field empty for one of the items. Write JavaScript code to handle this error so that if a user forgets to enter the quantity, they see the message "Please enter a valid quantity" instead of the website crashing. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> online store</h1>
+    <form action="">
+        <div>Books quantity: <input type="Number" id="qty"></div>
+        <button id="btn">Submit</button>
+        <p id="show"></p>
+    </form>
+    <script>
+        let quantity = document.querySelector("#qty")
+        let btn = document.querySelector("#btn")
+        let show = document.querySelector("#show")
+        btn.addEventListener("click",()=>{
+            event.preventDefault()
+            try{
+                if(quantity.value=="" || quantity.value<=0){
+                    throw new Error("please enter valid quantity")
+                }
+                else{
+                    show.innerText = `Books quantity is ${quantity.value}`
+                }
+            }catch(err){
+                show.innerText = err.message
+            }
+        })
+    </script>
+</body>
+</html>

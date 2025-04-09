@@ -1,0 +1,38 @@
+<!-- You are developing a registration form where the user must input their email address. A user enters "john.doe.com" instead of "john.doe@example.com". This incorrect format causes an error. Write a JavaScript solution to show a message "Invalid email format" when such an error occurs, ensuring the form still works. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p2</title>
+</head>
+<body>
+    <h2>registration form</h2>
+    <form action="">
+        <div>Email: <input type="text" id="email"></div>
+        <button id="btn">Submit</button>
+        <p id="show"></p>
+    </form>
+    <script>
+        let email = document.querySelector("#email")
+        let btn = document.querySelector("#btn")
+        let show = document.querySelector("#show")
+        //let validation = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        btn.addEventListener("click",()=>{
+            event.preventDefault()
+            try{
+                //if(email.value==validation|| email.value==""){
+                if(email.value=="" || !email.value.includes("@") || !email.value.includes(".")){
+                    throw new Error("Invalid email format")
+                }
+                else{
+                    show.innerText = `Email is ${email.value}`
+                }
+            }catch(err){
+                show.innerText = err.message
+            }
+        })
+    </script>
+</body>
+</html>

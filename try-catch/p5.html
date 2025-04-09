@@ -1,0 +1,38 @@
+<!-- // In a currency converter app, the user tries to convert 100 USD to EUR. However, instead of entering 100, the user types "abc" by mistake. This input causes an error. Write JavaScript code that handles this situation and shows the message "Please enter a valid number" if the user enters non-numeric values. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>convert USD to EUR</h1>
+    <form action="">
+        enter amount in USD: <input type="text" id="amount">
+        <button id="btn">Convert</button>
+        <p id="show"></p>
+    </form>
+    <script>
+        let amount = document.querySelector("#amount")
+        let btn = document.querySelector("#btn")
+        let show = document.querySelector("#show")
+
+        btn.addEventListener("click",()=>{
+            event.preventDefault()
+            try{
+                if(isNaN(amount.value)){
+                    throw new Error("Enter Number Not String")
+                }
+                else{
+                    let convert= amount.value * 0.91 
+                    show.innerText= `Converted amount in EUR is ${convert}`
+                }
+            }catch(err){
+                show.innerText= err.message
+            }
+        })
+    </script>
+</body>
+</html>
