@@ -20,14 +20,14 @@
         }
         show();
         increment.addEventListener("click",()=>{
-            localStorage.setItem("value",value)
-            show();
-            value++;            
+            value++; 
+            show();          
+            localStorage.setItem("value",value) 
         })
         decrement.addEventListener("click",()=>{
-            localStorage.setItem("value",value)
             value--;
-            show();                    
+            show();    
+            localStorage.setItem("value",value)                
         })
     </script>
 </body>
