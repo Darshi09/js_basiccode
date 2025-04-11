@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slider</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #eef2f7;
+    }
+
+    .slider-container {
+      width: 80%;
+      max-width: 800px;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 600px;
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+<body>
+<div class="slider-container">
+  <div class="slides">
+    <div class="slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNEJi2h0XqZ_rHUywtkxNNuj_LBRKoTMiIiQ&s');"></div>
+    <div class="slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHA2_10KWojL4EyYZJWNb7Q68cA-XVIs1dlA&s');"></div>
+    <div class="slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJie2kJM8Yl7eKV_QT1Snj1nI76zv0Z4vL-A&s');"></div>
+    <div class="slide" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Qh_arzlmmZwWJzhjM0_2xXyPGw2MOe59tQ&s');"></div>
+  </div>
+</div>
+
+<script>
+  let slides = document.querySelector('.slides');
+  let totalSlides = document.querySelectorAll('.slide').length;
+  let currentIndex = 0;
+
+  setInterval(() => {
+    currentIndex++;
+    if (currentIndex === totalSlides) {
+      currentIndex = 0;
+    }
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }, 3000); 
+</script>
+
+</body>
+</html>
