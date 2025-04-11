@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>slider</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+    
+      body {
+        height: 100vh;
+        background: linear-gradient(135deg, #f0f4ff, #dfe9f3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      h1 {
+        margin-bottom: 30px;
+        font-size: 2.5rem;
+        color: #333;
+        letter-spacing: 1px;
+      }
+    
+      #slider-image {
+        width: 600px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s ease;
+        background-color: #fff;
+      }
+    </style>
+    
 </head>
 <body>
     <h1>Slider</h1>
@@ -19,7 +54,7 @@
 
   let key =    setInterval(() => {
     image.src = imgarr[count];
-        if(count == imgarr.length-1){
+        if(count == imgarr.length){
           // count = 0;
           clearInterval(key);
         }
@@ -27,14 +62,6 @@
           count++;
         }
     }, 2000);
-
-        // let key = setTimeout(() => {
-        //     image.src = imgarr[count];
-        //     if(count == imgarr.length){
-        //         count = 0;
-        //         count++;
-        //     }
-        // }, 2000);
     </script>
 </body>
 </html>
